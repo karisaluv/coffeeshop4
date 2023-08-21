@@ -5,40 +5,30 @@
 
 //ini adalah kelas, nama kelas harus sama persis dengan nama file
 
-class CoffeeShop
-{
-    public $Menu;       
-    public $NomorAntrian;
-    public $Stok;
-    public $BestSeller;       
-    public $Pemesanan;
-    public $Transaksi;
+class C_koneksi{
+
 
 //ini adalah fungsi atau method yang bernama connection dan fungsi harus ada di dalam kelas
-    public function Menu($Menu) {
-        $this->Menu = $Menu;     
-    }
-    public function NomorAntrian($NomorAntrian) {            
-        $this->NomorAntrian = $NomorAntrian;
-    }
+    public function connection(){
 
-    public function Stok($Stok) {    
-        $this->Stok = $Stok;
-    }
-    public function BestSeller($BestSeller) {
-        $this->BestSeller = $BestSeller;     
-    }
-    public function Pemesanan($Pemesanan) {            
-        $this->Pemesanan = $Pemesanan;
-    }
+               // untuk isinya kita lanjutkan hari rabu
 
-    public function Transaksi($Transaksi) {    
-        $this->Transaksi = $Transaksi;
+               // membuat fungsi untuk terkoneksi kedalam database coffeeshop4
+
+               $conn = mysqli_connect('localhost', 'root', '', 'coffeeshop4');
+               //untuk mengecek apakah koneksi berhasil dibuat atau tidak
+               if (!$conn){
+                  die("Koneksi gagal dibuat : ".mysql_connect_error());
+               }else{
+                echo "Koneksi berhasil dibuat";
+
+               }
+            }
+         
+
     }
-
-    public function tampilkan() {    
-        echo "CoffeeShop " . $this->Menu . " memiliki " . $this->jumlahRoda . " buah roda dan " . $this->jumlahKursi . " kursi";
-    }
-
-}
-
+    //inisialisasi objek
+            $koneksi = new C_koneksi();
+// memanggil method atau fungsi yang ada didalam kelas c_koneksi
+            $koneksi->connection();
+?>
