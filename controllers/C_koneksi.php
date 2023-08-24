@@ -8,27 +8,28 @@
 class C_koneksi{
 
 
-//ini adalah fungsi atau method yang bernama connection dan fungsi harus ada di dalam kelas
-    public function connection(){
+               //ini adalah fungsi atau method yang bernama connection dan fungsi harus ada di dalam kelas
+               public function conn(){
 
                // untuk isinya kita lanjutkan hari rabu
 
                // membuat fungsi untuk terkoneksi kedalam database coffeeshop4
 
-               $conn = mysqli_connect('localhost', 'root', '', 'coffeeshop4');
+               $conn = mysqli_connect('localhost', 'root', '', 'coffeeshop');
                //untuk mengecek apakah koneksi berhasil dibuat atau tidak
                if (!$conn){
                   die("Koneksi gagal dibuat : ".mysql_connect_error());
                }else{
-                echo "Koneksi berhasil dibuat";
-
+                  //untuk mengembalikan nilai koneksi
+                return $conn;
                }
             }
          
 
     }
     //inisialisasi objek
-            $koneksi = new C_koneksi();
+           // $koneksi = new C_koneksi();
 // memanggil method atau fungsi yang ada didalam kelas c_koneksi
-            $koneksi->connection();
+            //$koneksi->connection();
+
 ?>
