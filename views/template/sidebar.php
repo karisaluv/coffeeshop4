@@ -11,7 +11,7 @@
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+    <div class="sidebar-brand-text mx-3">CoffeeShop</div>
 </a>
 
 <!-- Divider -->
@@ -19,7 +19,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item">
-    <a class="nav-link" href="index.html">
+    <a class="nav-link" href="home_user.php">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
 </li>
@@ -80,7 +80,7 @@
 
 <!-- Nav Item - Tables -->
 <li class="nav-item active">
-    <a class="nav-link" href="tables.html">
+    <a class="nav-link" href="tables.php">
         <i class="fas fa-fw fa-table"></i>
         <span>Tables</span></a>
 </li>
