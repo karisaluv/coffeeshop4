@@ -27,7 +27,18 @@ return $hasil;
 public function tambah($id, $nama, $qty, $harga, $photo){
     //2. tambah - INSERT INTO barang VALUES(1,'indomie','5','3000',''),(2,'teh gelas','5','1500','')
 
+    $conn = new C_koneksi();
+
     $sql = "INSERT INTO barang VALUES('$id', '$nama', '$qty', '$harga', '$photo')";
+
+    $query = mysqli_query($conn->conn(), $sql);
+
+    if ($query){
+        echo "Data Berhasil ditambahkan ke tabel barang";
+    }else {
+        echo "Data Tidak Berhasil ditambahkan ke tabel barang";
+    }
+    }
 
     public function edit($id){
 

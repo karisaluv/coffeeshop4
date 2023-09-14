@@ -7,86 +7,51 @@ include_once 'template/topbar.php';
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
+
+                                    
                                         <tr>
-                                            <th>menu</th>
-                                            <th>Opsi</th>
-                                            <th>harga</th>
-                                            <th>stok</th>
+                                            <th>no</th>
+                                            <th>Nama</th>
+                                            <th>Qty</th>
+                                            <th>Harga</th>
                                             <th>photo</th>
+                                            <th>Action</th>
+                                            <th>  <a href=""class="btn btn-primary btn-bock">edit</a>
+                                              <a href="" class="btn btn-primary btn-bock">hapus</a></td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Cappucinno</td>
+                                            <td>teh sosro</td>
                                             <th>Hot/Ice</th>
-                                            <td>Rp.26.000 / 29.000</td>
-                                            <td>50</td>
+                                            <td>Rp. 8.000</td>
+                                            <td>-</td>
                                             <td>1</td>
                                         </tr>
                                         <tr>
-                                            <td>Americano</td>
+                                            <td>teh pucuk</td>
                                             <th>Hot/Ice</th>
-                                            <td>Rp. 19.000 / 19.000</td>
-                                            <td>20</td>
+                                            <td>Rp. 4.000</td>
+                                            <td>-</td>
                                             <td>1</td>
                                         </tr>
                                         <tr>
-                                            <td>Chocolate</td>
+                                            <td>teh botol</td>
                                             <th>Hot/Ice</th>
-                                            <td>Rp. 27.000 / 35.000</td>
-                                            <td>50</td>
+                                            <td>Rp. 5.000</td>
+                                            <td>-</td>
                                             <td>1</td>
                                             
                                         </tr>
                                         <tr>
-                                            <td>Greentea</td>
+                                            <td>teh kotak</td>
                                             <th>Hot/Ice</th>
-                                            <td>Rp. 27.000 / 35.000</td>
-                                            <td>50</td>
+                                            <td>Rp. 6.000</td>
+                                            <td>-</td>
                                             <td>1</td>
                                           
                                         </tr>
-                                        <tr>
-                                            <td>Redvelvet</td>
-                                            <th>Hot/Ice</th>
-                                            <td>Rp. 27.000 / 35.000</td>
-                                            <td>50</td>
-                                            <td>1</td>
-                                          
-                                        </tr>
-                                        <tr>
-                                            <td>Potato wedges</td>
-                                            <th>-</th>
-                                            <td>Rp. 31.000</td>
-                                            <td>50</td>
-                                            <td>1</td>
-                                          
-                                        </tr>
-                                        <tr>
-                                            <td>Steak</td>
-                                            <th>-/th>
-                                            <td>Rp. 75.000</td>
-                                            <td>50</td>
-                                            <td>1</td>
-                                          
-                                        </tr>
-                                        <tr>
-                                            <td>chicken teriyaki</td>
-                                            <th>-</th>
-                                            <td>Rp. 25.000</td>
-                                            <td>50</td>
-                                            <td>1</td>
-                                          
-                                        </tr>
-                                        <tr>
-                                            <td>Dimsum</td>
-                                            <th>-</th>
-                                            <td>Rp.15.000</td>
-                                            <td>50</td>
-                                            <td>1</td>
-                                          
-                                        </tr>
-
+                                        
                                     </tbody>
                                 </table>
                             </div>

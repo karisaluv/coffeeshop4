@@ -11,7 +11,7 @@ session_start();
         public function register($id, $nama, $email, $pass, $role) {
               
         //membuat sebuah variabel yang bertipe data objek dari kelas/file C_koneksi 
-        $conn = new C_koneksi();
+        $conn= new C_koneksi();
 
         //perintah untuk memasukkan data dari form regis kedalam tabel user
         $sql = "INSERT INTO user VALUES ('$id', '$nama', '$email', '$pass', '$role')";
@@ -48,6 +48,7 @@ session_start();
 
                 //mengubah data dari bertipe data objek menjadi array asosiatif
                 $data = mysqli_fetch_assoc($query);
+                var_dump($data);
 
                 //untuk mengecek apakah ada data dari hasil query
                  if ($data){
