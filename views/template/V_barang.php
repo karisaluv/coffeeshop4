@@ -7,22 +7,20 @@
 
 $barang = new C_barang();
 
+
 ?>
+<!-- Begin Page Heading -->
 <div class="container-fluid">
 
-                        <div class="input-field">
-                                    <a href="V_tambah-barang.php" class="btn btn-primary">Tambah Barang</a>
-                                </div>
+                     
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Market List</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
-
+                   <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <a href = "tambah_barang.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus da-sm text-white-50"></i>Tambah Barang
+                   </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tabel</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -31,8 +29,8 @@ $barang = new C_barang();
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
+                                            <th>Qty</th>
                                             <th>Harga</th>
-                                            <th>Stock</th>
                                             <th>Foto</th>
                                             <th>Action</th>
                                         </tr>
@@ -40,7 +38,7 @@ $barang = new C_barang();
                                     <tbody>
                                         <?php
                                         $nomor = 1;
-                                        foreach ($market->tampil() as $b){
+                                        foreach ($barang->tampil() as $b){
                                     ?>
                                     <tr>
                                         <td><?php echo $nomor++?></td>
@@ -53,27 +51,42 @@ $barang = new C_barang();
                                         </td>
                                     </tr>
                                         <?php } ?>
+
+                                        </tbody>
                                     <tfoot>
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
+                                            <th>Qty</th>
                                             <th>Harga</th>
-                                            <th>Stock</th>
                                             <th>Foto</th>
                                             <th>Action</th>
                                         </tr>
-                                    </tbody>
+                                        </tfoot>
                                     
-                                    </tfoot>
+                                    
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- /.container-fluid -->
+                                        
+                                        </div>
+                   <!-- End of Main Content -->
 
-                <?php
-    //modular untuk memanggil file dari folder template
-    include_once 'template/footer.php';
-    
- ?>
+                   <!-- Footer -->
+
+                   <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span> Copyright &copy; Your Website 2020</span>
+                                        </div>
+                                        </div>
+                                        </footer>
+                                          <!-- End of Footer -->
+
+                                        </div>
+
+
+

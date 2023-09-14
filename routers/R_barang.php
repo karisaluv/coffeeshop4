@@ -10,6 +10,11 @@ if ($_GET['aksi'] == 'tambah') {
     $harga = $_POST['harga'];
 
     $barang->tambah($id=0,$nama,$qty,$harga,'');
+    
+}elseif ($_GET['aksi'] == 'update'){
+    # code...
+}elseif ($_GET['aksi'] == 'hapus'){
+    # code...
 }
 
 ?>
