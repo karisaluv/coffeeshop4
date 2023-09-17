@@ -15,12 +15,12 @@ include_once 'template/topbar.php';
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Tambah Barang</h1>
                             </div>
-                            <form action="routers/r_barang.php?aksi=tambah" method="POST" class="user">
+                            <form action="routers/r_barang.php?aksi=tambah" method="POST" class="user" enctype="multiple/form-data">
 
 
                                 <!-- ini form email yang menerima inputan email dari user  -->
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="nama_barang"
+                                    <input type="number" class="form-control form-control-user" id="nama_barang"
                                         placeholder="Nama Barang" name="nama_barang">
                                 </div>
 

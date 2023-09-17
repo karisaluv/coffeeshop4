@@ -62,6 +62,6 @@ public function tambah($id, $nama, $qty, $harga, $photo){
 
         $sql = 'DELETE FROM'
     }
-}
+
 
 ?>
