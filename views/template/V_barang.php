@@ -1,26 +1,23 @@
 <?php
-    //modular untuk memanggil file dari folder template
-    include_once 'template/header.php';
-    include_once 'template/sidebar.php';
-    include_once 'template/topbar.php';
-   include_once '../controllers/C_barang.php';
-
+session_start();
+//modular memanggil file dari folder template
+$halaman = "Barang";
+include_once 'template/header.php';
+include_once 'template/sidebar.php';
+include_once 'template/topbar.php';
+include_once '../controllers/C_barang.php';
 $barang = new C_barang();
-
-
-?>
-<!-- Begin Page Heading -->
-<div class="container-fluid">
-
-                     
-                    <!-- Page Heading -->
-                   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <a href = "tambah_barang.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus da-sm text-white-50"></i>Tambah Barang
-                   </div>
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+?>              
+            <div class = "row">
+                <div class = "col-lg-2"></div>
+                <div class = "col-lg-8">
+                <a href="tambah_barang.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                        <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Tambah Data</span>
+                                    </a>          
+                <!-- /.container-fluid -->
+                <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tabel</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tabel Barang</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -28,65 +25,55 @@ $barang = new C_barang();
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama</th>
+                                            <th>Nama Barang</th>
                                             <th>Qty</th>
                                             <th>Harga</th>
-                                            <th>Foto</th>
+                                            <th>Photo</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
+
                                     <tbody>
+
                                         <?php
                                         $nomor = 1;
-                                        foreach ($barang->tampil() as $b){
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $nomor++?></td>
-                                        <td><?php echo $b->nama_barang?></td>
-                                        <td><?php echo $b->harga?></td>
-                                        <td><?php echo $b->stock?></td>
-                                        <td><?php echo $b->foto?></td>
-                                        <td><a href="C_koneksi.php?id=<?php echo $data ['id']; ?>" class="btn btn-primary btn-block">Hapus</a>
-                                        <a href="C_koneksi.php?id=<?php echo $data ['id']; ?>" class="btn btn-primary btn-block">Edit</a>
-                                        </td>
-                                    </tr>
-                                        <?php } ?>
 
-                                        </tbody>
-                                    <tfoot>
+                                        foreach ($barang->tampil() as $b){
+
+                                        ?>
+        
                                         <tr>
+                                            <td><?php echo $nomor++?></td>
+                                            <td><?= $b->nama_barang?></td>
+                                            <td><?= $b->qty?></td>
+                                            <td><?= $b->harga?></td>
+                                            <td><?= $b->photo?></td>
+                                            <td align = 'center'><a href="#" class="btn btn-primary btn-icon-split">
+                                        <span class="text">Edit</span>
+                                    </a>
+                                    <a href="#" class="btn btn-danger btn-icon-split">
+                                        <span class="text">Hapus</span>
+                                    </a>
+                                </td>
+                                        </tr>
+                                    
+                                        <?php } ?>
+                                        
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
                                             <th>No</th>
-                                            <th>Nama</th>
+                                            <th>Nama Barang</th>
                                             <th>Qty</th>
                                             <th>Harga</th>
-                                            <th>Foto</th>
+                                            <th>Photo</th>
                                             <th>Action</th>
                                         </tr>
-                                        </tfoot>
-                                    
-                                    
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- /.container-fluid -->
-                                        
-                                        </div>
-                   <!-- End of Main Content -->
 
-                   <!-- Footer -->
-
-                   <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span> Copyright &copy; Your Website 2020</span>
-                                        </div>
-                                        </div>
-                                        </footer>
-                                          <!-- End of Footer -->
-                                          
-                                        </div>
-
-
-
+<?php
+    include_once 'template/footer.php';
+?>
