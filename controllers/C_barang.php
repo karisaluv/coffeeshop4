@@ -44,24 +44,20 @@ public function tambah($id, $nama, $qty, $harga, $photo){
 
         //3. edit - SELECT * FROM barang WHERE harga=1500
 
-        $sql = "SELECT * FROM barang WHERE ID ='$id'";
-    
-    }
+        $sql = "SELECT * FROM barang WHERE id = '$id'";
 
-    Public function update($id, $nama, $qty, $harga, $photo){
-
-        //update- UPDATE barang SET qty = '10' WHERE id = 2;
-
-        $sql ="UPDATE barang SET nama_barang = '$nama', qty = '$qty' , harga = '$'harga', photo = '$photo' WHERE id = '$id'";
-
-    }
-
-    function delete(){
-
-        // hapus = DELETE FROM barang WHERE nama_barang= 'INDOMIE'
-
-        $sql = 'DELETE FROM'
-    }
+        $query = mysqli_query($conn->conn(), $sql);
+        
+        while ($q = mysqli_fetch_object($query)){
+        
+            $hasil[]= $q;
+        }
+        
+        return $hasil;
+        
+        }
+        
+        
 
 
 ?>

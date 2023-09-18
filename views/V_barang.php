@@ -1,13 +1,8 @@
-<?php
-session_start();
-//modular memanggil file dari folder template
-$halaman = "Barang";
+<?php 
 include_once 'template/header.php';
 include_once 'template/sidebar.php';
 include_once 'template/topbar.php';
-include_once '../controllers/C_barang.php';
-$barang = new C_barang();
-?>              
+?>          
             <div class = "row">
                 <div class = "col-lg-2"></div>
                 <div class = "col-lg-8">
@@ -35,7 +30,7 @@ $barang = new C_barang();
 
                                     <tbody>
 
-                                        <?php
+                                        <?php 
                                         $nomor = 1;
 
                                         foreach ($barang->tampil() as $b){
@@ -48,12 +43,11 @@ $barang = new C_barang();
                                             <td><?= $b->qty?></td>
                                             <td><?= $b->harga?></td>
                                             <td><?= $b->photo?></td>
-                                            <td align = 'center'><a href="#" class="btn btn-primary btn-icon-split">
-                                        <span class="text">Edit</span>
-                                    </a>
-                                    <a href="#" class="btn btn-danger btn-icon-split">
-                                        <span class="text">Hapus</span>
-                                    </a>
+                                            <td>
+                                                <center>
+                                                    <a href="V_edit_barang.php?id=<?= $b->id ?>"><button type="button" class="btn btn-round btn-primary">Edit</button></a>
+                                                    <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="../../routers/r_barang.php?id=<?= $b->id ?>& aksi=hapus"><button type="button" name="hapus" class="btn btn-round btn-danger">Hapus</button></a>
+                                        </center>
                                 </td>
                                         </tr>
                                     

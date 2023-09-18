@@ -8,13 +8,13 @@ session_start();
         class C_login{
         //membuat fungsi untuk menangani register user
         //parameter adalah nilai yang diberikan kepada sebuah fungsi,metode,atau prosedur sebagai masukan untuk mengatur atau mengubah perilaku dari tindakan yang di jalankan oleh fungsi tersebut.          
-        public function register($id, $nama, $email, $pass, $role) {
+        public function register($id=0, $nama, $email, $pass, $role) {
               
         //membuat sebuah variabel yang bertipe data objek dari kelas/file C_koneksi 
         $conn= new C_koneksi();
 
         //perintah untuk memasukkan data dari form regis kedalam tabel user
-        $sql = "INSERT INTO user VALUES ('$id', '$nama', '$email', '$pass', '$role')";
+        $sql = "INSERT INTO users VALUES ('$id', '$nama', '$email', '$pass', '$role', '')";
 
         //$sql2 = "INSERT INTO (id, nama, email, password, role, photo,) users VALUES ('$id', '$nama', '$email', '$pass', '$role', '')";
 
@@ -41,20 +41,19 @@ session_start();
             if (isset($_POST['login'])) {
 
                 //query untuk menampilkan data yang dipilih(email)
-                $sql = "SELECT * FROM user WHERE email = '$email'";
+                $sql = "SELECT * FROM users  WHERE email = '$email'";
 
                 //eksekutor
                 $query = mysqli_query($conn->conn(), $sql);
 
                 //mengubah data dari bertipe data objek menjadi array asosiatif
                 $data = mysqli_fetch_assoc($query);
-                var_dump($data);
-
+        
                 //untuk mengecek apakah ada data dari hasil query
                  if ($data){
                     
                        //untuk mengecek atau membandingkan inputan password dari user dengan password dari tabel user
-                    if (password_verify($pass, $data['pass'])){
+                    if (password_verify($pass, $data['password'])){
 
                         //untuk mengecek apakah posisi login sebagai admin, atau mengecek apakah role user itu sebagai admin atau bukan
                         if ($data ['role'] == 'admin'){

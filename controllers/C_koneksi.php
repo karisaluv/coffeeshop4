@@ -15,7 +15,7 @@ class C_koneksi{
 
                // membuat fungsi untuk terkoneksi kedalam database coffeeshop4
 
-               $conn = mysqli_connect('localhost', 'root', '', 'coffees_shop');
+               $conn = mysqli_connect('localhost', 'root', '', 'coffeshop');
                //untuk mengecek apakah koneksi berhasil dibuat atau tidak
                if (!$conn){
                   die("Koneksi gagal dibuat : ".mysql_connect_error());
