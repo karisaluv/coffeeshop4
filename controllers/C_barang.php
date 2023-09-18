@@ -5,14 +5,13 @@ class C_barang{
 
     public function tampil() {
 
-       $conn = new C_koneksi();
+        $conn = new C_koneksi();
 
         $sql = "SELECT * FROM barang ORDER BY id DESC";
 
-        $query = mysqli_query($conn->conn(),$sql);
+        $query = mysqli_query($conn->conn(), $sql);
 
         while ($q = mysqli_fetch_object($query)) {
-
             $hasil[] = $q;
         }
 
