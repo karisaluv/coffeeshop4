@@ -29,7 +29,7 @@ $barang = new C_barang();
                                             <th>Qty</th>
                                             <th>Harga</th>
                                             <th>Photo</th>
-                                            <th>Action</th>
+                                            <th><center>Action</center></th>
                                         </tr>
                                     </thead>
 
@@ -48,13 +48,14 @@ $barang = new C_barang();
                                             <td><?= $b->qty?></td>
                                             <td><?= $b->harga?></td>
                                             <td><?= $b->photo?></td>
+                                          
                                             <!-- tanda tanya setelah nama file berarti mempunyai fungsi yang sama dengan get-->
-                                            <td align = 'center'><a href="V_edit_barang.php?id=<?= $b->id ?>" class="btn btn-primary btn-icon-split">
-                                        <span class="text">Edit</span>
-                                    </a>
-                                    <a href="#" class="btn btn-danger btn-icon-split">
-                                        <span class="text">Hapus</span>
-                                    </a>
+                                            <td>
+                                                <center>
+                                                    <a href="V_edit_barang.php?id=<?= $o->id ?>"><button type="button" class="btn btn-round btn-primary">Edit</button></a>
+
+                                                    <a onclick="return confirm('Apakah yakin data akan dihapus?')" href="../../routers/R_barang.php?id=<?= $o->id ?>&aksi=hapus"><button type="button" name="hapus" class="btn btn-round btn-danger">Hapus</button></a>
+                                        </center>
                                 </td>
                                         </tr>
                                     

@@ -16,6 +16,8 @@ include_once 'template/topbar.php';
         
     </h1>
 </div>
+<form action ="routers/r_login.php?aksi=login" method="POST" class="user">
+                    <a href="../index.php">logout</a>
 <!-- /.container-fluid-->
 <?php
 //modular untuk memanggil fie dari folder template
