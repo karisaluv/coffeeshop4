@@ -1,63 +1,71 @@
 <?php
 
-include_once 'C_koneksi.php';
+   include_once 'C_koneksi.php';
+class C_barang{
 
- class C_Barang{
-  
-public function tampil(){
+    public function tampil() {
 
-    $conn = new C_koneksi();
+       $conn = new C_koneksi();
 
-    //1.tampil - SELECT * FROM barang ORDER BY id DESC;
+        $sql = "SELECT * FROM barang ORDER BY id DESC";
 
-$sql = "SELECT * FROM 'barang' ORDER BY id DESC";
+        $query = mysqli_query($conn->conn(),$sql);
 
-$query = mysqli_query($conn->conn(), $sql);
+        while ($q = mysqli_fetch_object($query)) {
 
-while ($q = mysql_fetch_object($query)){
+            $hasil[] = $q;
+        }
 
-    $hasil[]= $q;
-}
-
-return $hasil;
-
-}
-
-}
-public function tambah($id, $nama, $qty, $harga, $photo){
-    //2. tambah - INSERT INTO barang VALUES(1,'indomie','5','3000',''),(2,'teh gelas','5','1500','')
-
-    $conn = new C_koneksi();
-
-    $sql = "INSERT INTO barang VALUES('$id', '$nama', '$qty', '$harga', '$photo')";
-
-    $query = mysqli_query($conn->conn(), $sql);
-
-    if ($query){
-        echo "Data Berhasil ditambahkan ke tabel barang";
-    }else {
-        echo "Data Tidak Berhasil ditambahkan ke tabel barang";
-    }
+        return $hasil;
     }
 
-    public function edit($id){
+    public function tambah($id,$nama,$qty,$harga,$photo) {
+        $sql = "INSERT INTO barang VALUES
+        ('$id','$nama','$qty','$harga','$photo')";
 
-        //3. edit - SELECT * FROM barang WHERE harga=1500
-
-        $sql = "SELECT * FROM barang WHERE id = '$id'";
+        $conn = new C_koneksi();
 
         $query = mysqli_query($conn->conn(), $sql);
-        
-        while ($q = mysqli_fetch_object($query)){
-        
-            $hasil[]= $q;
+        if ($query) {
+            echo "Data berhasil ditambahkan ke tabel";
+        }else{
+            echo "Data gagal ditambahkan";
         }
-        
+    }
+    public function edit($id) {
+        $conn = new C_koneksi();
+
+        $sql ="SELECT * FROM barang WHERE id = '$id'";
+
+        $query = mysqli_query($conn->conn(),$sql);
+
+        while ($q = mysqli_fetch_object($query)) {
+
+            $hasil[] = $q;
+        }
+
         return $hasil;
-        
+
+    }
+    public function update ($id, $data) {
+
+        $conn = new C_koneksi();
+
+        $sql = "UPDATE barang SET nama_barang = '$nama', qty = '$qty', harga = '$harga', photo = '$photo' WHERE id = '$id'";
+
+        $query = mysqli_query($conn->conn(), $sql);
+
+
+        if ($query) {
+            echo "<script>alert('Data berhasil diubah');window.location='../views/V_barang.php'</script>";
+
+        }else {
+            echo "Dataa gagal diubah";
         }
-        
-        
+    }
+    public function delete(){
+        $sql = "DELETE FROM Barang WHERE id = '$id'";
+    }
 
-
+}
 ?>
