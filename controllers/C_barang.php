@@ -5,13 +5,14 @@ class C_barang{
 
     public function tampil() {
 
-        $conn = new C_koneksi();
+       $conn = new C_koneksi();
 
         $sql = "SELECT * FROM barang ORDER BY id DESC";
 
         $query = mysqli_query($conn->conn(), $sql);
 
         while ($q = mysqli_fetch_object($query)) {
+
             $hasil[] = $q;
         }
 
@@ -24,7 +25,7 @@ class C_barang{
 
         $conn = new C_koneksi();
 
-        $query = mysqli_query($conn->conn(), $sql);
+        $query = mysqli_query($conn->conn(),$sql);
         if ($query) {
             echo "Data berhasil ditambahkan ke tabel";
         }else{
@@ -59,7 +60,7 @@ class C_barang{
             echo "<script>alert('Data berhasil diubah');window.location='../views/V_barang.php'</script>";
 
         }else {
-            echo "Dataa gagal diubah";
+            echo "Data gagal diubah";
         }
     }
     public function delete(){

@@ -1,7 +1,7 @@
 <?php
 //session_start();
 //modular memanggil file dari folder tampleate
-$halaman = "Barang";
+$halaman = "barang";
 include_once 'template/header.php';
 include_once 'template/sidebar.php';
 include_once 'template/topbar.php';
@@ -37,18 +37,15 @@ $barang = new C_barang();
 
                                         <?php
                                         $nomor = 1;
-
-                                        foreach ($barang->tampil() as $b){
-
-                                        ?>
-        
-                                        <tr>
+                                        foreach ($barang->tampil() as $b){ 
+                                            ?>    
+                                            
+                                        <tr>                                            
                                             <td><?php echo $nomor++?></td>
                                             <td><?= $b->nama_barang?></td>
                                             <td><?= $b->qty?></td>
                                             <td><?= $b->harga?></td>
                                             <td><?= $b->photo?></td>
-                                          
                                             <!-- tanda tanya setelah nama file berarti mempunyai fungsi yang sama dengan get-->
                                             <td>
                                                 <center>

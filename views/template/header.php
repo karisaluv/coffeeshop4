@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if($_SESSION['data'] == ""){
+    header("location: ../index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

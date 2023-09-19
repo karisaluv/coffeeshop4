@@ -44,7 +44,7 @@ $barang = new C_barang();
                             <!--untuk menampung password dari user-->
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="password"
-                                    placeholder="Harga" name="harga"value ="<?= $b->harga ?>">
+                                    placeholder="Harga" name="harga" value ="<?= $b->harga ?>">
                             </div>
 
                             <!--untuk menampung nama dari user-->
