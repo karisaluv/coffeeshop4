@@ -47,6 +47,7 @@ class C_barang{
         return $hasil;
 
     }
+    
     public function update ($id, $data) {
 
         $conn = new C_koneksi();

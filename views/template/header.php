@@ -16,7 +16,7 @@ if($_SESSION['data'] == ""){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>CoffeeShop - Tables</title>
 
     <!-- Custom fonts for this template -->
     <!-- Berfungsi untuk keluar folder -->

@@ -5,6 +5,9 @@
 
 //ini adalah kelas, nama kelas harus sama persis dengan nama file
 
+use C_koneksi as GlobalC_koneksi;
+
+
 class C_koneksi{
 
 
@@ -18,7 +21,7 @@ class C_koneksi{
                $conn = mysqli_connect('localhost', 'root', '', 'coffeshop');
                //untuk mengecek apakah koneksi berhasil dibuat atau tidak
                if (!$conn){
-                  die("Koneksi gagal dibuat : ".mysql_connect_error());
+                  die("Koneksi gagal dibuat : ".mysqli_connect_error());
                }else{
                   //untuk mengembalikan nilai koneksi
                 return $conn;
@@ -28,8 +31,8 @@ class C_koneksi{
 
     }
     //inisialisasi objek
-// $conn = new C_koneksi();
+$conn = new C_koneksi();
 // memanggil method atau fungsi yang ada didalam kelas c_koneksi
-// $conn->conn();
+$conn->conn();
 
 ?>
