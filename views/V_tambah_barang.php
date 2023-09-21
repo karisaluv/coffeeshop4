@@ -37,7 +37,7 @@ include_once 'template/topbar.php';
                             <!--untuk menampung email dari user-->
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="Quantity" name="qty">
+                                    placeholder="Stock" name="stock">
                             </div>
 
                             <!--untuk menampung password dari user-->

@@ -19,9 +19,9 @@ class C_barang{
         return $hasil;
     }
 
-    public function tambah($id,$nama,$qty,$harga,$photo) {
+    public function tambah($id,$nama,$stock,$harga,$photo) {
         $sql = "INSERT INTO barang VALUES
-        ('$id','$nama','$qty','$harga','$photo')";
+        ('$id','$nama','$stock','$harga','$photo')";
 
         $conn = new C_koneksi();
 
@@ -48,24 +48,34 @@ class C_barang{
 
     }
     
-    public function update ($id, $data) {
+    public function update ($id,$nama,$stock,$harga,$photo) {
 
         $conn = new C_koneksi();
 
-        $sql = "UPDATE barang SET nama_barang = '$nama', qty = '$qty', harga = '$harga', photo = '$photo' WHERE id = '$id'";
+        $sql = "UPDATE barang SET nama_barang = '$nama', stock = '$stock', harga = '$harga', photo = '$photo' WHERE id = '$id'";
 
         $query = mysqli_query($conn->conn(), $sql);
 
 
         if ($query) {
-            echo "<script>alert('Data berhasil diubah');window.location='../views/V_barang.php'</script>";
-
+            echo "<script>alert('Data Berhasil Diupdate ke Tabel Barang');window.location='../views/V_barang.php'</script>";
+              
         }else {
-            echo "Data gagal diubah";
+            echo "Data Tidak Berhasil Diupdate ke Tabel Barang";
         }
     }
-    public function delete(){
+    public function delete($id){
+
+        $conn = new C_koneksi();
+    
         $sql = "DELETE FROM Barang WHERE id = '$id'";
+
+        mysqli_query($conn->conn(), $sql);
+
+        header("Location:../views/V_barang.php");
+
+        
+        
     }
 
 }

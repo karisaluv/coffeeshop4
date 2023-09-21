@@ -8,12 +8,28 @@ include_once 'template/topbar.php';
 include_once '../controllers/C_barang.php';
 $barang = new C_barang();
 ?>              
+
+
+
             <div class = "row">
-                <div class = "col-lg-2"></div>
+                <div class = "col-lg-2">
                 <div class = "col-lg-8">
+               
                 <a href="V_tambah_barang.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                        <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Tambah Data</span>
-                                    </a>          
+        
+                                        <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Tambah Barang</span>
+
+                                    </a>   
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+
+                                    <h2><b>Barang</b></h2>
+                                    
+
+
                 <!-- /.container-fluid -->
                 <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -26,7 +42,7 @@ $barang = new C_barang();
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Barang</th>
-                                            <th>Qty</th>
+                                            <th>Stock</th>
                                             <th>Harga</th>
                                             <th>Photo</th>
                                             <th><center>Action</center></th>
@@ -46,24 +62,26 @@ $barang = new C_barang();
                                             <td><?= $b->stock?></td>
                                             <td><?= $b->harga?></td>
                                             <td><?= $b->photo?></td>
-                                             <!-- tanda tanya setelah nama file berarti mempunyai fungsi yang sama dengan get-->
-                                             <td align = 'center'><a href="V_edit_barang.php?id=<?= $b->id ?>" class="btn btn-primary btn-icon-split">
-                                        <span class="text">Edit</span>
-                                    </a>
-                                    <a href="#" class="btn btn-danger btn-icon-split">
-                                        <span class="text">Hapus</span>
-                                    </a>
+                                                                                 
+                                        <td>
+                                            <center>
+                                                <a href="V_edit_barang.php?id=<?= $b->id ?>"><button type="button" class="btn btn-round btn-primary">Edit</button></a>
+
+                                                <a onclick="return confirm('Apakah yakin data akan di hapus?')"  href="../routers/R_barang.php?id=<?= $b->id ?>&aksi=hapus"><button type="button" name="hapus" class="btn btn-round btn-danger">Hapus</button></a>
+                                        </center>                                          
                                 </td>
+
+
                                         </tr>
                                     
-                                        <?php } ?>
+                                        <?php }?>
                                         
                                     </tbody>
                                     <tfoot>
                                     <tr>
                                             <th>No</th>
                                             <th>Nama Barang</th>
-                                            <th>Qty</th>
+                                            <th>Stock</th>
                                             <th>Harga</th>
                                             <th>Photo</th>
                                             <th>Action</th>
@@ -72,7 +90,7 @@ $barang = new C_barang();
                                 </table>
                             </div>
                         </div>
-
+                                        
 <?php
     include_once 'template/footer.php';
-?>
+                                        ?>

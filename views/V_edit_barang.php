@@ -23,7 +23,7 @@ $barang = new C_barang();
                             <h1 class="h4 text-gray-900 mb-4">Edit Barang</h1>
                         </div>
 
-                        <form action="../routers/R_barang.php?aksi=edit" method="POST" class="user" enctype = "multipart/form-data">
+                        <form action="../routers/R_barang.php?aksi=update" method="POST" class="user" enctype = "multipart/form-data">
                             <?php foreach($barang->edit($_GET['id']) as $b){}?>
                             <!--untuk menampung inputan id user -->
                             <div class="form-group">
@@ -35,13 +35,13 @@ $barang = new C_barang();
                                 <input type="text" class="form-control form-control-user"
                                     placeholder="Nama Barang" name="nama" value ="<?= $b->nama_barang ?>">
                             </div>
-                            <!--untuk menampung email dari user-->
+                            <!--untuk menampung stock dari user-->
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="Quantity" name="qty" value ="<?= $b->qty ?>">
+                                    placeholder="Stock" name="stock" value ="<?= $b->stock ?>">
                             </div>
 
-                            <!--untuk menampung password dari user-->
+                            <!--untuk menampung harga dari user-->
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="password"
                                     placeholder="Harga" name="harga" value ="<?= $b->harga ?>">
@@ -58,7 +58,7 @@ $barang = new C_barang();
                             </div>
 
                             <div class="input-field">
-                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Tambahkan" id="register" name="register">
+                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Edit" id="register" name="register">
                             </div>
 
                         </form>
