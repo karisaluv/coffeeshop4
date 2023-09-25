@@ -6,7 +6,7 @@ $barang = new C_barang();
 if ($_GET['aksi'] == 'tambah') {
 
     $id = $_POST['id'];
-    $nama = $_POST['nama'];
+    $nama = $_POST['nama_barang'];
     $stock = $_POST['stock'];
     $harga = $_POST['harga'];
 
@@ -33,10 +33,9 @@ if ($_GET['aksi'] == 'tambah') {
          
         if ($ukuran < 1044070) {
 
-            move_uploaded_file($file_tmp, '../assets/img' . $nama_photo);
+            move_uploaded_file($file_tmp, '../assets/img/' . $nama_photo);
 
-
-
+            
            $query = $barang->tambah($id=0, $nama, $stock, $harga,$nama_photo);
         }else{
             echo "UKURAN GAMBAR TERLALU BESAR";
@@ -49,7 +48,7 @@ if ($_GET['aksi'] == 'tambah') {
     
 }elseif ($_GET['aksi'] == 'update'){
     $id = $_POST['id'];
-    $nama = $_POST['nama'];
+    $nama = $_POST['nama_barang'];
     $stock = $_POST['stock'];
     $harga = $_POST['harga'];
 

@@ -61,13 +61,20 @@ $barang = new C_barang();
                                             <td><?= $b->nama_barang?></td>
                                             <td><?= $b->stock?></td>
                                             <td><?= $b->harga?></td>
-                                            <td><?= $b->photo?></td>
+                                          
+                                            
+                                            <td>                                            
+                                        
+                                                <div style="display: flex; justify-content:  center; align-items: center;">
+                                                <img src="<?= "../assets/img/" . $b->photo; ?>" alt="<? = $b->nama_barang ?>" width="50" height="65">
+                                        </div>
+                                        </td>
                                                                                  
                                         <td>
                                             <center>
                                                 <a href="V_edit_barang.php?id=<?= $b->id ?>"><button type="button" class="btn btn-round btn-primary">Edit</button></a>
 
-                                                <a onclick="return confirm('Apakah yakin data akan di hapus?')"  href="../routers/R_barang.php?id=<?= $b->id ?>&aksi=hapus"><button type="button" name="hapus" class="btn btn-round btn-danger">Hapus</button></a>
+                                                <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="../routers/R_barang.php?id=<?= $b->id ?>&aksi=hapus"><button type="button" name="hapus" class="btn btn-round btn-danger">Hapus</button></a>
                                         </center>                                          
                                 </td>
 
@@ -83,7 +90,7 @@ $barang = new C_barang();
                                             <th>Nama Barang</th>
                                             <th>Stock</th>
                                             <th>Harga</th>
-                                            <th>Photo</th>
+                                            <th>photo</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>

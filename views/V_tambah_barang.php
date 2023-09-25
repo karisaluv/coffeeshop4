@@ -25,10 +25,10 @@ include_once 'template/topbar.php';
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Tambah Barang</h1>
                             </div>
-                            <form action="../routers/r_barang.php?aksi=tambah" method="POST" class="user" enctype="multipart/form-data">
+                            <form action="../routers/R_barang.php?aksi=tambah" method="POST" class="user" enctype="multipart/form-data">
 
 
-                                <div class="form-group">
+                            <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="id" name="id" hidden>
 
