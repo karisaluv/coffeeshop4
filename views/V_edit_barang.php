@@ -24,54 +24,58 @@ $barang = new C_barang();
                         </div>
 
                         <form action="../routers/R_barang.php?aksi=update" method="POST" class="user" enctype = "multipart/form-data">
-                            <?php foreach($barang->edit($_GET['id']) as $b){}?>
-                            <!--untuk menampung inputan id user -->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user"
-                                    placeholder="Id" name="id" value ="<?= $b->id ?>" hidden>
-                            </div>
-                            <!--untuk menampung nama dari user-->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user"
-                                    placeholder="Nama Barang" name="nama" value ="<?= $b->nama_barang ?>">
-                            </div>
-                            <!--untuk menampung stock dari user-->
+                            <?php foreach($barang->edit($_GET['id']) as $b){ ?>
+
+                         
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="Stock" name="stock" value ="<?= $b->stock ?>">
+                                    placeholder="Id"  value ="<?= $b->id ?>" name="id" hidden>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                    placeholder="Nama Barang" value ="<?= $b->nama_barang ?>" name="nama_barang">
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                    placeholder="Stock"  value ="<?= $b->stock ?>" name="stock"> 
                             </div>
 
-                            <!--untuk menampung harga dari user-->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="password"
-                                    placeholder="Harga" name="harga" value ="<?= $b->harga ?>">
-                            </div>
-
-                            <!--untuk menampung nama dari user-->
-                            <div class="form-group">
-                                <input type="file" class="form-control form-control-user" id="photo"
-                                    value="user" name="role" hidden>
-                            </div>
                            
-                            <div class="input-field">
-                                <input type="file" value="Choose file" id="register" name="register">
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                    placeholder="Harga"  value ="<?= $b->harga ?>" name="harga">
+                            </div>
+                         
+                            <div class="form-group">
+                                <input type="file" class="form-control-file" id="photo"
+                                    placeholder="Photo" name="photo">
                             </div>
 
+                            
+                       
+                    
+
                             <div class="input-field">
-                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Edit" id="register" name="register">
+                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Edit" id="" name="edit_barang">
                             </div>
+
+
+                            <?php } ?>
 
                         </form>
                         
                 
                        
                     </div>
-                </div>
-            </div>
+                            </div>
         </div>
     </div>
 
 </div>
+
+
 
 <!-- Bootstrap core JavaScript-->
 <script src="../assets/vendor/jquery/jquery.min.js"></script>

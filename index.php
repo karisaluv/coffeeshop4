@@ -63,7 +63,7 @@
 <hr>
                     <div class="text-center"> 
                 
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" href="register.php">Create an account</a>
                             </div>
                         </div>
                     </div>
