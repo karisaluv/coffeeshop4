@@ -2,11 +2,11 @@
 include_once '../controllers/C_barang.php';
 
 $barang = new C_barang();
-
+ 
 if ($_GET['aksi'] == 'tambah') {
 
     $id = $_POST['id'];
-    $nama = $_POST['nama_barang'];
+    $nama_barang = $_POST['nama_barang'];
     $stock = $_POST['stock'];
     $harga = $_POST['harga'];
 
@@ -36,7 +36,7 @@ if ($_GET['aksi'] == 'tambah') {
             move_uploaded_file($file_tmp, '../assets/img/' . $nama_photo);
 
             
-           $query = $barang->tambah($id, $nama_barang, $stock, $harga, $nama_photo);
+           $query = $barang->tambah($id=0, $nama_barang, $stock, $harga, $nama_photo);
         }else{
             echo "UKURAN GAMBAR TERLALU BESAR";
         }
